@@ -51,6 +51,7 @@ function App() {
   }
 
   const handleEvent = (e)=>{
+       setError("");
       const {name,value} = e.target;
       if(name === "height"){
         setHeight(value);
@@ -68,11 +69,11 @@ function App() {
         {error && <p className="error">{error}</p>}
         <div className="input-container">
           <label htmlFor='height'>Height in(Cm):</label>
-          <input type="text" name='height' id='height' value={height} placeholder='Enter your height' onChange={handleEvent} />
+          <input type="number" name='height' id='height' value={height} placeholder='Enter your height' onChange={handleEvent} />
         </div>
         <div className="input-container">
           <label htmlFor='weight'>Weight in(Kg):</label>
-          <input type="text" name='weight' id='weight' value={weight} placeholder='Enter your weight' onChange={handleEvent} />
+          <input type="number" name='weight' id='weight' value={weight} placeholder='Enter your weight' onChange={handleEvent} />
         </div>
         <button id='calc' onClick={calculate}>Calculate BMI</button>
         <button id='clear' onClick={clear}>Clear</button>
